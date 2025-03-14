@@ -1,0 +1,29 @@
+node_modules
+
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+venv/
+env/
+
+# Distribution and build directories
+build/
+dist/
+
+
+.aider*
+.env
+easycode.ignore
+
+# ignore python folder
+python
+reference.md
+testA.js
+
+.DS_Store
+*.zip
+mixpanel-chrome.js
+options.backup.js
