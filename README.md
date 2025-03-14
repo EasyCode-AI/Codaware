@@ -1,6 +1,6 @@
 <h1 align="center"><br>Codaware - by EasyCode<br></h1>
 
-## Chat with Codebase from ChatGPT or Claude.ai
+## Chat with Codebase from ChatGPT or Claude
 
 [![Codaware Demo](https://img.youtube.com/vi/WFo2guwa8bY/maxresdefault.jpg)](https://youtu.be/WFo2guwa8bY)
 
