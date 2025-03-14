@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "Codaware, by EasyCode",
+    "version": "1.1",
+    "description": "Chat with codebase and apply changes directly.",
+    "icons": {
+        "128": "easycode.png"
+    },
+    "permissions": ["activeTab", "storage"],
+    "host_permissions": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://claude.ai/*",
+        "https://api.mixpanel.com/*",
+        "ws://localhost:*/*" 
+    ],
+    "options_page": "options.html",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://chat.openai.com/*",
+                "https://chatgpt.com/*",
+                "https://claude.ai/*"
+            ],
+            "js": [
+                "interceptSubmit.js",
+                "utils.js", 
+                "platform.js",
+                "files.js",
+                "contextMenu.js",
+                "fileChips.js",
+                "applyChange.js",
+                "content.js"
+            ],
+            "css": ["styles.css"],
+            "run_at": "document_start"
+        }
+    ],
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    }
+}

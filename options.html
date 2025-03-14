@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codaware - EasyCode Extension Settings</title>
+    <style>
+        :root {
+            --primary-color: #2f6de6;
+            --primary-hover: #598aeb;
+            --background-color: #f5f5f5;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: var(--primary-color);
+        }
+
+        h4 {
+            color: var(--primary-color);
+        }
+
+        p, ul {
+            margin-bottom: 1rem;
+        }
+
+        .files-section, .faq-section, .problems-section {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        ul {
+            list-style: disc inside;
+            padding-left: 1rem;
+        }
+
+        .form-group {
+            display: none;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        #status {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            background-color: #e8f5e9;
+            color: var(--primary-color);
+        }
+
+        #cachedFiled, #fileList {
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .chrome-only {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Codaware - EasyCode Settings</h2>
+
+        <div>
+            <button id="checkConnection">Check Connection</button>
+            <div id="status"></div>
+        </div>
+
+        <!-- Common Problems Section -->
+        <div class="problems-section">
+            <h3>Common Problems</h3>
+            <ul>
+                <li><strong>I don't see any files.</strong><br>Make sure VS Code is running, and your project is opened inside VS Code. Try to refresh the file cache first. If that doesn't work, try restarting VS Code. As a last resort, reinstall the chrome extension.</li>
+                <li><strong>Nothing happens after I click "Apply Change".</strong><br>Make sure you are logged into EasyCode inside VS Code. This is required to apply changes. It's free to use.</li>
+            </ul>
+        </div>
+
+
+        <div class="form-group">
+            <label for="port">WebSocket Port:</label>
+            <input type="number" id="port" min="1" max="65535">
+            <button id="save">Save</button>
+        </div>
+
+        <!-- Files Section -->
+        <div class="files-section">
+            <h3>Files</h3>
+            <div id="cachedFiled"></div>
+            <button id="clearCache">Refresh Files Cache</button>
+
+            <div class="chrome-only">
+                <button id="selectFolder">Select Folder</button>
+                <div id="fileList"></div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h3>FAQ</h3>
+            <ul>
+                <li><strong>Is my code stored or shared?</strong><br>No. The chrome extension simply fetches file content from the file system as specified by the user. No data is stored. The code is open source and can be found <a href="https://github.com/Personabo-Technologies/codaware" target="_blank">here</a>.</li>
+                <li><strong>Why do I need to install a VS Code extension?</strong><br>The VS Code extension does 2 things: it watches for changes in the file system and serves the file content to the chrome extension, and it helps apply changes back to the source code. You can install the extension from the <a href="https://marketplace.visualstudio.com/items?itemName=EasyCodeAI.chatgpt-gpt4-gpt3-vscode" target="_blank">VS Code Marketplace</a>.</li>
+                <li><strong>Does this work with JetBrains IDEs?</strong><br>Not at the moment, but we are working on this. If you want to try it first, please join the <a href="https://tally.so/r/wolMX5" target="_blank">waitlist here</a>.</li>
+                <li><strong>Have a bug or feature request?</strong><br>Please open an issue on <a href="https://github.com/Personabo-Technologies/codaware/issues" target="_blank">GitHub</a>.</li>
+            </ul>
+        </div>
+
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>
