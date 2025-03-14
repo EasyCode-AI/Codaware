@@ -8,6 +8,20 @@
 - don't pay for multiple subscriptions, use chatgpt plus or claude paid plan, and advanced models
 - take advantage of web features such as o1-preview, image, web search, artifacts, etc.
 
+## Installation
+
+### Option 1: Chrome Web Store (Recommended)
+You can install Codaware directly from the Chrome Web Store:
+[Click here to install Codaware](https://chromewebstore.google.com/detail/codaware-by-easycode/mmelffgafmcppjiecckdlmgbbdcgmkdg?hl=en)
+
+### Option 2: Manual Installation (Load Unpacked)
+If you prefer to install manually:
+1. Download the extension files
+2. Open Chrome and navigate to `chrome://extensions/`
+3. Enable "Developer mode" in the top right corner
+4. Click "Load unpacked"
+5. Select the downloaded extension directory
+
 ## Features
 - [x] reference files on ChatGPT & Claude.ai
 - [x] ability to apply changes directly from ChatGPT and Claude.ai
